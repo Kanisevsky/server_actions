@@ -7,13 +7,13 @@ const variants = {
   visible: { opacity: 1 },
 };
 
-function AnimeCard({ anime }) {
+function AnimeCard({ anime, index }) {
   return (
     <MotionDiv
       variants={variants}
       initial="hidden"
       animate="visible"
-      transition={{ delay: 1, ease: 'easeInOut', duration: 0.5 }}
+      transition={{ delay: index * 0.25, ease: 'easeInOut', duration: 0.5 }}
       viewport={{ amount: 0 }}
       className="max-w-sm rounded relative w-full"
     >

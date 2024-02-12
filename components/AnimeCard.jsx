@@ -1,6 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { MotionDiv } from './MotionDiv';
 
 const variants = {
   hidden: { opacity: 0 },
@@ -9,7 +9,7 @@ const variants = {
 
 function AnimeCard({ anime }) {
   return (
-    <motion.div
+    <MotionDiv
       variants={variants}
       initial="hidden"
       animate="visible"
@@ -61,7 +61,7 @@ function AnimeCard({ anime }) {
           </div>
         </div>
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 }
 export default AnimeCard;

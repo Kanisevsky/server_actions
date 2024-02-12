@@ -1,8 +1,22 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
+
+const variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
 function AnimeCard({ anime }) {
   return (
-    <div className="max-w-sm rounded relative w-full">
+    <motion.div
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+      transition={{ delay: 1, ease: 'easeInOut', duration: 0.5 }}
+      viewport={{ amount: 0 }}
+      className="max-w-sm rounded relative w-full"
+    >
       <div className="relative w-full h-[37vh]">
         <Image
           src={`https://shikimori.one${anime.image.original}`}
@@ -47,7 +61,7 @@ function AnimeCard({ anime }) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 export default AnimeCard;

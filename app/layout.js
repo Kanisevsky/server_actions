@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google';
-import './globals.css';
 import Hero from '@/components/Hero';
+import Footer from '@/components/Footer';
+import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Hero />
         {children}
+        <Footer />
       </body>
     </html>
   );
